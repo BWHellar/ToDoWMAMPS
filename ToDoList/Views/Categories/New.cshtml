@@ -1,0 +1,23 @@
+@{
+  Layout = "_Layout";
+}
+<div class="grid">
+  <div class="header">
+    <h1>Add a category</h1>
+  </div>
+</div>
+<div class="frame">
+  <p>Add a category here:</p>
+
+  <form action="/categories" method="post">
+    <label for="categoryName">Category name</label>
+    <input id="categoryName" name="categoryName" type="text">
+    <button type="submit">Add</button>
+  </form>
+</div>
+<div class="home">
+  <p><a href="/">Back home</a></p>
+</div>
+<div class="back">
+  <p><a href="/categories">Back to categories</a></p>
+</div>

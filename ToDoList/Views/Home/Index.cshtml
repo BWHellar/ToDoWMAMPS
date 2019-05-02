@@ -1,19 +1,14 @@
-@using ToDoList.Models;
-
-<h1>To Do List</h1>
-<ul>
-
-@if (Model.Count == 0)
-{
-  <p>You have no items in your to do list!</p>
+@{
+  Layout = "_Layout";
 }
-@if(Model.Count != 0)
-{
-  @foreach (Item item in Model)
-  {
-    <li>@item.GetDescription()</li>
-  }
-}
-
-</ul>
-<a href="/items/new">Add a new item.</a>
+<div class="grid">
+  <div class="header">
+    <h1>To Do List</h1>
+  </div>
+  <div class="left">
+    <h3 id="view"><a href='/categories'>View categories</a></h3>
+  </div>
+  <div class="right">
+    <h3 id="category"><a href='/categories/new'>Add a new category</a></h3>  
+  </div>
+</div>
