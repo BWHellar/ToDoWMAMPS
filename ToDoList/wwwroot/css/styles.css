@@ -57,7 +57,7 @@ div#footer{
   padding:8px;
 }
 
-.home{
+.back{
   border-style: solid;
   width: 18%;
   position: absolute;
@@ -68,21 +68,25 @@ div#footer{
   border-radius: 25px;
   box-shadow: 3px 5px #ABD6D7;
 }
-.back{
-  border-style: solid;
-  width: 25%;
-  margin-top: 19%;
-  float: right;
-  bottom: 50px;
-  background: #F3FA9E;
-  text-align: center;
-  font-size: 25px;
-  border-radius: 25px;
-  box-shadow: 3px 5px #ABD6D7;
-}
+
 .frame{
   padding: 5%;
-  margin: 20%;
+  margin: 15%;
   border-style: double;
   text-align: center;
+  background-color: #F3FA9E88;
+  border-radius: 25px;
+}
+form{
+  display: inline-block;
+  vertical-align: middle;
+}
+#categoryName
+{
+  text-align: center;
+  caret-color: red;
+}
+.home{
+  text-decoration: underline;
+  float: right;
 }
