@@ -14,6 +14,11 @@ namespace ToDoList.Tests
       Item.ClearAll();
     }
 
+    public ItemTest()
+    {
+      DBConfiguration.ConnectionString = "server=localhost;user id=root;password=root;port=8889;database=to_do_list_test;";
+    }
+
     [TestMethod]
     public void ItemConstructor_CreatesInstanceOfItem_Item()
     {
@@ -51,52 +56,65 @@ namespace ToDoList.Tests
       Assert.AreEqual(updatedDescription, result);
     }
 
+    // [TestMethod]
+    // public void GetAll_ReturnsEmptyList_ItemList()
+    // {
+    //   //Arrange
+    //   List<Item> newList = new List<Item> { };
+    //
+    //   //Act
+    //   List<Item> result = Item.GetAll();
+    //
+    //   //Assert
+    //   CollectionAssert.AreEqual(newList, result);
+    // }
+
+    // [TestMethod]
+    // public void GetAll_ReturnsItems_ItemList()
+    // {
+    //   //Arrange
+    //   string description01 = "Walk the dog";
+    //   string description02 = "Wash the dishes";
+    //   Item newItem1 = new Item(description01);
+    //   Item newItem2 = new Item(description02);
+    //   List<Item> newList = new List<Item> { newItem1, newItem2 };
+    //
+    //   //Act
+    //   List<Item> result = Item.GetAll();
+    //
+    //   //Assert
+    //   CollectionAssert.AreEqual(newList, result);
+    // }
+    // [TestMethod]
+    // public void GetId_ItemsInstantiateWithAnIdAndGetterReturns_Int()
+    // {
+    //   string description = "Walk to baby";
+    //   Item newItem = new Item(description);
+    //   int result = newItem.GetId();
+    //   Assert.AreEqual(1, result);
+    // }
+    // [TestMethod]
+    // public void Find_ReturnsCorrectItem_Item()
+    // {
+    //   string description01 = "Walk the kids";
+    //   string description02 = "Wash the dad";
+    //   Item newItem1 = new Item(description01);
+    //   Item newItem2 = new Item(description02);
+    //   Item result = Item.Find(2);
+    //   Assert.AreEqual(newItem2, result);
+    // }
     [TestMethod]
-    public void GetAll_ReturnsEmptyList_ItemList()
-    {
-      //Arrange
-      List<Item> newList = new List<Item> { };
+  public void GetAll_ReturnsEmptyListFromDatabase_ItemList()
+  {
+  //Arrange
+  List<Item> newList = new List<Item> { };
 
-      //Act
-      List<Item> result = Item.GetAll();
+  //Act
+  List<Item> result = Item.GetAll();
 
-      //Assert
-      CollectionAssert.AreEqual(newList, result);
-    }
+  //Assert
+  CollectionAssert.AreEqual(newList, result);
+}
 
-    [TestMethod]
-    public void GetAll_ReturnsItems_ItemList()
-    {
-      //Arrange
-      string description01 = "Walk the dog";
-      string description02 = "Wash the dishes";
-      Item newItem1 = new Item(description01);
-      Item newItem2 = new Item(description02);
-      List<Item> newList = new List<Item> { newItem1, newItem2 };
-
-      //Act
-      List<Item> result = Item.GetAll();
-
-      //Assert
-      CollectionAssert.AreEqual(newList, result);
-    }
-    [TestMethod]
-    public void GetId_ItemsInstantiateWithAnIdAndGetterReturns_Int()
-    {
-      string description = "Walk to baby";
-      Item newItem = new Item(description);
-      int result = newItem.GetId();
-      Assert.AreEqual(1, result);
-    }
-    [TestMethod]
-    public void Find_ReturnsCorrectItem_Item()
-    {
-      string description01 = "Walk the kids";
-      string description02 = "Wash the dad";
-      Item newItem1 = new Item(description01);
-      Item newItem2 = new Item(description02);
-      Item result = Item.Find(2);
-      Assert.AreEqual(newItem2, result);
-    }
   }
 }
